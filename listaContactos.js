@@ -86,17 +86,14 @@ function updateContact(id, newData) {
 }
 const newData = {
   nombres: "Shopper",
-  apellidos: "Nuevo Apellido",
-  teléfono: "Nuevo Teléfono",
-  ubicaciones: "Nueva Ubicación",
-  ciudad: "Nueva Ciudad",
-  dirección: "Nueva Dirección"
+  apellidos: "opper",
+  teléfono: "+51 123456",
+  ubicaciones: "la gran ruta",
+  ciudad: "Isla cerezos",
+  dirección: "Antiguo Castillo"
 };
+//se hace el llamado a la funcion 
 updateContact(2, newData);
-
-
-
-
 console.log(printContacts())
 
 /*console.log(deleteContact(2));
