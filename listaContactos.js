@@ -9,29 +9,29 @@ let contactList = [
     teléfono: "321 456",
     ubicaciones: "Colombia",
     ciudad: "Cartagena",
-    dirección: "calle 123# 45-67"
+    dirección: "calle 123 # 45a-67"
   },
   {
     id: 2,
     nombres: "Jefferson",
     apellidos: "Castro",
-    teléfono: "987 456",
+    teléfono: "987456",
     ubicaciones: "Colombia",
     ciudad: "Barranquilla",
-    dirección: "Carrera 123 # 45a-67"
-  },
-  {
-    id: 3,
-    nombres: "Carlos",
-    apellidos: "Lopez",
-    teléfono: "321 456",
-    ubicaciones: "Colombia",
-    ciudad: "Turbo (Antioquia)",
-    dirección: "Calle 123 #456-78"
+    dirección: "Carrera 123 # 4a-56"
+    },
+    {
+        id: 3,
+        nombres: "Carlos",
+        apellidos: "Lopez",
+        teléfono: "321 456",
+        ubicaciones: "Colombia",
+        ciudad: "Turbo(Antioquia)",
+        dirección: "Calle 123 #b4-567"
     }
 ];
 
-function printInformation() {
+function printContacts() {
     console.log("Lista de contactos:");
     contactList.forEach(function (contact, index) {
         console.log((index + 1) + ". " + contact.nombres + " " + contact.apellidos);
@@ -39,11 +39,11 @@ function printInformation() {
         console.log("  Ubicación: " + contact.ubicaciones);
         console.log("  Ciudad: " + contact.ciudad);
         console.log("  Dirección: " + contact.dirección);
-        console.log("===================");
+        console.log("------------------------");
     });
 }
 function addContact(newContact) {
-    // Continua con el id más alto y asigna el siguiente disponible
+    
     let highestId = 0;
     contactList.forEach(function (contact) {
         if (contact.id > highestId) {
@@ -54,7 +54,7 @@ function addContact(newContact) {
     contactList.push(newContact);
 }
 
-// Función para borrar un contacto existente de la lista
+// Función para borrar un contacto 
 function deleteContact(id) {
   contactList = contactList.filter(function(contact) {
     return contact.id !== id;
@@ -83,17 +83,23 @@ function updateContact(id, newData) {
   } else {
     console.log("El contacto no existe en la lista");
   }
-  var newData = {
-    nombres: "Shopper",
-    apellidos: "Nuevo Apellido",
-    teléfono: "Nuevo Teléfono",
-    ubicaciones: "Nueva Ubicación",
-    ciudad: "Nueva Ciudad",
-    dirección: "Nueva Dirección"
-  };
 }
+const newData = {
+  nombres: "Shopper",
+  apellidos: "Nuevo Apellido",
+  teléfono: "Nuevo Teléfono",
+  ubicaciones: "Nueva Ubicación",
+  ciudad: "Nueva Ciudad",
+  dirección: "Nueva Dirección"
+};
 updateContact(2, newData);
-//*console.log(addContact(dario))
-console.log(printInformation())
-//console.log(deleteContact(2));
+
+
+
+
+console.log(printContacts())
+
+/*console.log(deleteContact(2));
+console.log(printContacts())
+console.log(updateContact);*/
 
