@@ -61,16 +61,39 @@ function deleteContact(id) {
   });
 }
 
+//Bonus
 
-let dario = {
-    nombres: "Dario",
-    apellidos: "none",
-    teléfono: "32145",
-    ubicaciones: "No registra",
-    ciudad: "Desconocida",
-    dirección: "No registra"
-};
-
-
-console.log(addContact(dario))
+function updateContact(id, newData) {
+  let index = -1;
+  for (let i = 0; i < contactList.length; i++) {
+    if (contactList[i].id === id) {
+      index = i;
+      break;
+    }
+  }
+  if (index !== -1) {
+    let contact = contactList[index];
+    contact.nombres = newData.nombres || contact.nombres;
+    contact.apellidos = newData.apellidos || contact.apellidos;
+    contact.teléfono = newData.teléfono || contact.teléfono;
+    contact.ubicaciones = newData.ubicaciones || contact.ubicaciones;
+    contact.ciudad = newData.ciudad || contact.ciudad;
+    contact.dirección = newData.dirección || contact.dirección;
+    console.log("Contacto actualizado ");
+  } else {
+    console.log("El contacto no existe en la lista");
+  }
+  var newData = {
+    nombres: "Shopper",
+    apellidos: "Nuevo Apellido",
+    teléfono: "Nuevo Teléfono",
+    ubicaciones: "Nueva Ubicación",
+    ciudad: "Nueva Ciudad",
+    dirección: "Nueva Dirección"
+  };
+}
+updateContact(2, newData);
+//*console.log(addContact(dario))
 console.log(printInformation())
+//console.log(deleteContact(2));
+
